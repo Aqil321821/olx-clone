@@ -4,7 +4,7 @@ import arrow from '../assets/arrow.png';
 import search from "../assets/search.png"
 import Login from './Login';
 import { useState } from 'react';
-const Navbar = () => {
+const Navbar = (props) => {
 
 
        const [loginPop,setLoginPop]=useState(false)
@@ -23,7 +23,7 @@ const Navbar = () => {
         <img src={arrow} alt='arrow' className='w-8 h-7  ml-3 ' />
       </div>
 <div className='flex h-12 ml-4 border-2 border-black bg-white'>
-    <input placeholder='Find Cars, Mobile phones and more...'  className='ml-3 w-96 outline-none ' />
+    <input onChange={(e)=>props.setSearch(e.target.value)} placeholder='Find Cars, Mobile phones and more...'  className='ml-3 w-96 outline-none ' />
     <img src={search} alt="search" className='w-10 h-11.5 ' />
 </div>
 
