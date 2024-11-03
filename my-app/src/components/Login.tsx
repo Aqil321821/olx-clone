@@ -1,8 +1,22 @@
 import guitar from '../assets/guuitar.png';
 import google from '../assets/google.png';
 import phone from '../assets/phone.png';
+import { signInWithPopup } from 'firebase/auth';
+import { auth,googleProvider } from '../firebase/setup';
 
 const Login = () => {
+      
+    const googleSignin=async ()=>{
+        try {
+            await signInWithPopup(auth,googleProvider)
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+
+
   return (
     <div className='relative z-10' aria-labelledby='modal-title' role='dialog' aria-modal='true'>
       <div className='fixed inset-0 bg-zinc-950 bg-opacity-75 transition-opacity' aria-hidden='true' />
@@ -19,7 +33,7 @@ const Login = () => {
                       <img src={phone} alt='phone' className='h-7 ml-2' />
                       <h1 className='font-semibold   ml-10'>Continue with Phone</h1>
                     </div>
-                    <div className='flex border-4 border-gray-400 cursor-pointer p-2 mt-2 rounded-md'>
+                    <div onClick={googleSignin} className='flex border-4 border-gray-400 cursor-pointer p-2 mt-2 rounded-md'>
                       <img src={google} alt='phone' className='h-7 ml-2' />
                       <h1 className=' font-semibold  ml-8 '>Continue with Google</h1>
                     </div>
