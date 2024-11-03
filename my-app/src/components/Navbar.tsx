@@ -14,16 +14,16 @@ const Navbar = () => {
   return (
 
 
-    <>    <div className='flex p-4'>
+    <>    <div className='flex p-4 justify-center bg-slate-100 shadow-md'>
       <img src={logo} alt='logo' className='w-11 h-9 mt-1 ' />
 
-      <div className='flex border-2 border-spacing-1 w-64 p-2 border-black ml-5'>
-        <img src={lens} alt='lens' className='w-6 h-5 mt-1' />
-        <input placeholder='Location'  />
-        <img src={arrow} alt='arrow' className='w-8 h-7  pr-2 ' />
+      <div className='flex border-2 border-spacing-1  w-72 p-2 border-black ml-5 bg-white'>
+        <img src={lens} alt='lens' className='w-6 h-5 mt-1 bg-slate-100' />
+        <input placeholder='Location'  className='ml-3 outline-none' />
+        <img src={arrow} alt='arrow' className='w-8 h-7  ml-3 ' />
       </div>
-<div className='flex h-12 ml-4 border-2 border-black'>
-    <input placeholder='Find Cars, Mobile phones and more...'  className='ml-3 w-96' />
+<div className='flex h-12 ml-4 border-2 border-black bg-white'>
+    <input placeholder='Find Cars, Mobile phones and more...'  className='ml-3 w-96 outline-none ' />
     <img src={search} alt="search" className='w-10 h-11.5 ' />
 </div>
 
@@ -41,7 +41,7 @@ const Navbar = () => {
  </div>
 
     </div>
-    {loginPop && <Login />}
+    {loginPop && <Login setLoginPop={setLoginPop}/>}
     </>
   );
 };

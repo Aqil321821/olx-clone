@@ -4,7 +4,7 @@ import phone from '../assets/phone.png';
 import { signInWithPopup } from 'firebase/auth';
 import { auth,googleProvider } from '../firebase/setup';
 
-const Login = () => {
+const Login = (props) => {
       
     const googleSignin=async ()=>{
         try {
@@ -24,6 +24,7 @@ const Login = () => {
         <div className='flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0'>
           <div className='relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all  sm:w-full sm:max-w-lg'>
             <div className='bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4'>
+                <h1 onClick={()=>props?.setLoginPop(false)} className=' cursor-pointer font font-semibold text-3xl'>X</h1>
               <div className='sm:flex sm:items-start'>
                 <div className='mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left'>
                   <div className='mt-2'>
